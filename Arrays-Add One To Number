@@ -1,0 +1,22 @@
+/**
+ * @input A : Integer array
+ * @input n1 : Integer array's ( A ) length
+ * 
+ * @Output Integer array. You need to malloc memory, and fill the length in len1
+ */
+int* plusOne(int* A, int n1, int *len1) {
+    int *res=(int *)malloc(sizeof(int)*(n1+1));
+    int i=0,c=1,l=0;
+    int n=n1;
+    for(i=n1-1;i>=0;i--)
+    {
+        res[n--]=(A[i]+c)%10;
+        c=(A[i]+c)/10;
+    }
+    res[n]=c;
+    for(i=0;i<n1+1&& res[i]==0;i++)
+    l++;
+    res=res+l;
+    *len1=n1+1-l;
+    return res;
+}
