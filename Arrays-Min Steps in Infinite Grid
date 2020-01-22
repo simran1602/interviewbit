@@ -1,0 +1,41 @@
+/**
+ * @input A : Integer array
+ * @input n1 : Integer array's ( A ) length
+ * @input B : Integer array
+ * @input n2 : Integer array's ( B ) length
+ * 
+ * @Output Integer
+ */
+int coverPoints(int* A, int n1, int* B, int n2) 
+{
+    int i=0,j=0,d1=0,d2=0,s=0;
+    while(i<n1)
+    {
+        if(A[i]>A[i+1])
+        {
+            d1=A[i]-A[i+1];
+        }
+        else
+        {
+            d1=A[i+1]-A[i];
+        }
+        if(B[i]>B[i+1])
+        {
+            d2=B[i]-B[i+1];
+        }
+        else
+        {
+            d2=B[i+1]-B[i];
+        }
+        if(d1>d2)
+        {
+            s+=d1;
+        }
+        else
+        {
+            s+=d2;
+        }
+        i++;
+    }
+    return s;
+}
