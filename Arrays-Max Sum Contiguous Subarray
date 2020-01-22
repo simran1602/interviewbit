@@ -1,0 +1,18 @@
+/**
+ * @input A : Read only ( DON'T MODIFY ) Integer array
+ * @input n1 : Integer array's ( A ) length
+ * 
+ * @Output Integer
+ */
+int maxSubArray(const int* A, int n1) {
+    int m1=INT_MIN,m2=0,i=0;
+    while(i<n1)
+    {
+        m2=m2+A[i];
+        if(m1<m2)
+        m1=m2;
+        if(m2<0)
+        m2=0;
+    }
+    return m1;
+}
